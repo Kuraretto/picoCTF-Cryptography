@@ -1,0 +1,139 @@
+Guess My Cheese (Part 1)
+
+Description
+Try to decrypt the secret cheese password to prove you're not the imposter!
+
+Additional details will be available after launching your challenge instance.
+
+after launching the instance we are given a encrypted text in my case it was: HIHHJEOCEJJJWC
+
+and it asks us to enter either 2 options, either to encryt a text (should be a type of cheese) or guess the cheese which would be the decrypted answer of HIHHJEOCEJJJWC
+
+since i did not know what encrytion was used i gave the option to encrypt a cheese 
+and went with cheddar 
+
+once i entered cheddar it encrypted it into: KVEHHQR
+
+from this i was able to figure out it was Affine cipher 
+
+more about affine cipher :https://en.wikipedia.org/wiki/Affine_cipher
+
+once i read about affine cipher 
+i started to break into the algorithm 
+
+encryption is an Affine Cipher, which follows:
+
+E(x)=(a⋅x+b)(mod26)
+
+Decryption formula:
+D(y)=a^−1⋅(y−b)(mod26)
+
+Where:
+
+a is the multiplicative key (must be coprime with 26).
+
+b is the additive key (the shift).
+
+a^−1 is the modular inverse of a modulo 26.
+
+Finding Keys 
+a and b
+we know "CHEDDAR" → "KVEHHQR".
+Let’s match characters:
+C=2 → K=10
+10=a⋅2+b(mod26)
+
+H=7 → V=21
+21=a⋅7+b(mod26)
+
+Subtract the two equations:
+11=a⋅5(mod26)
+
+Now, find the modular inverse of 5 mod 26.
+
+5.21≡105≡1(mod26)
+
+So inverse of 5 is 21.
+
+a≡11⋅21≡231≡23(mod26)
+
+add it to the first equation:
+
+10≡23⋅2+b(mod26)
+
+10≡46+b(mod26)
+
+b≡10−46≡−36≡16(mod26)
+
+a=23
+
+b=16
+
+now that we have a and be there are 2 ways to slove this we can either us cyberchef to decrypt the affine cipher
+using the values a = 23 and b =16 
+
+when i tried this i got the output as 
+
+DUDDLESWELLLYW
+
+and when i went back to the webapplication and entered the choice to guess the cheese and entered the "DUDDLESWELLLYW" it printed the flag
+
+the second method is to write a python code which will decrypt it 
+i asked chatgpt to write me the code to decrypt an affine cipher 
+
+this is the code 
+
+
+import string
+
+# Ciphertext
+cipher = "HIHHJEOCEJJJWC"
+alpha = string.ascii_uppercase
+
+# Affine cipher keys
+a = 23
+b = 16
+
+# Modular inverse of a under mod 26
+a_inv = pow(a, -1, 26)
+
+# Decryption: D(y) = a_inv * (y - b) mod 26
+result = []
+for ch in cipher:
+    y = alpha.index(ch)   # numeric value of ciphertext letter
+    x = (a_inv * (y - b)) % 26  # apply affine decryption
+    result.append(alpha[x])     # map number back to letter
+
+plaintext = ''.join(result)
+print("Decrypted text:", plaintext)
+
+
+explanation of the code 
+
+alpha = string.ascii_uppercase
+Gives us "ABCDEFGHIJKLMNOPQRSTUVWXYZ" so we can map letters to numbers (A=0, B=1, …, Z=25).
+
+a = 23, b = 16
+These are the keys we derived using the test encryption.
+
+a_inv = pow(a, -1, 26)
+This computes the modular inverse of a modulo 26.
+It’s the value such that (a * a_inv) % 26 == 1.
+In this case, pow(23, -1, 26) gives 17.
+
+Looping through each letter in ciphertext:
+
+Convert letter to index (y).
+
+Apply decryption formula:
+
+x=(a^−1⋅(y−b))(mod26)
+
+Convert number back into a letter with alpha[x].
+
+Finally, ''.join(result) rebuilds the plaintext string.
+
+when i ran the code it retured the value "DUDDLESWELLLYW" 
+
+and entering this as the guess gave me the flag 
+
