@@ -1,0 +1,27 @@
+rotation
+
+Description
+You will find the flag after decrypting this file
+
+we are given a file to download and once we download the file
+
+the dowloaded file is a simple file with an excrypted text inside 
+
+we copy the text 
+
+"xqkwKBN{z0bib1wv_l3kzgxb3l_429in00n}"
+
+the name of the challenge gave me a very importatn clue abotu what type of encryption this was 
+
+so i went ot cyberchef and pasted the encrypted text and then used the "ROT13"
+method to decrypt the text 
+
+and increased the rotation amount to 18 
+
+here it is important to note that the options for 
+
+"Rotate lower case chars" and "Rotate uppeer case chars" are ticked and the "Rotate numbers" is not checked 
+
+when the amount of rotation it set to 18 
+the output gives us the flag 
+
