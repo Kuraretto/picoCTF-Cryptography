@@ -1,0 +1,34 @@
+Description
+This is the Custom Cyclical Cipher! Download the ciphertext here. Download the encoder here. Enclose the flag in our wrapper for submission. If the flag was "example" you would submit "picoCTF{example}".
+
+first we download the provided files from the challenge
+
+we first open the python file names "convert.py"
+
+we can see that this code is used to cipher some characters from the given input.
+ the convert.py file can be found in this git repo
+ 
+then we write a decrypting script to decode the content or the characters which were ciphered
+
+the script.py can be found in this git repo
+
+then once we have the script we decode the given encrypted file which we downloaded from the challenge
+
+once we decrypt it, it shows us that it was a python script 
+
+now let us try to run this python script and give the input as the python script itself 
+
+i was able to predict this as the challenge name was like a clue to be a cyclic cipher 
+
+so we get the outpout and store it in a txt file the name of the output file would be decrypt.txt
+this file has the python code, now let us pass this txt file containing the python program to the 
+decrypted python program 
+
+then we make a new script which is used to get us the contents of the flag 
+
+this script is "decrypt_script.py" and it can be found in this git repo 
+
+we pass the text file as the input to this python script 
+and we get a few characters 
+
+now enter these characters in the picoCTF flag format
