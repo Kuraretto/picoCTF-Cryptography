@@ -1,0 +1,33 @@
+ReadMyCert
+
+Description
+How about we take you on an adventure on exploring certificate signing requests Take a look at this CSR file here.
+
+first we check the file tyupe using the file cmd and see that it is a PEM certificate request 
+
+and by reading the contents in the file using the cat command we can see that it starts with 
+-----BEGIN CERTIFICATE REQUEST----- 
+
+and end with -----END CERTIFICATE REQUEST-----
+
+to find out in detail about the contents displayed by the cat output we use the tool openssl 
+
+openssl is knowm for its ability to handle various cryptographic operations
+
+we use the command 
+
+openssl req -in readmycert.csr -noout -text
+
+by using this command we can get a more detailed output of the certificate file 
+
+and in this under the title Subject: CN = 
+
+we can see that the flag has been printed 
+
+Here is the detailed view of the command we used to get the flag
+
+    openssl: The command-line tool for cryptographic operations.
+    req: A subcommand for working specifically with certificate requests like CSRs.
+    -in: Specifies the input file, in this case, our CSR file.
+    -noout: Ensures that the actual certificate is not output, focusing on the textual representation.
+    -text: Displays the CSR in a human-readable format, showing all relevant details.
