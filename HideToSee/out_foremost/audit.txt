@@ -1,0 +1,23 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Thu Sep 18 13:06:44 2025
+Invocation: foremost -i atbash.jpg -o out_foremost 
+Output directory: /home/kali/Downloads/picoCTF/Cryptography/HideToSee/out_foremost
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: atbash.jpg
+Start: Thu Sep 18 13:06:44 2025
+Length: 50 KB (51508 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00000000.jpg 	      50 KB 	          0 	 
+Finish: Thu Sep 18 13:06:44 2025
+
+1 FILES EXTRACTED
+	
+jpg:= 1
+------------------------------------------------------------------
+
+Foremost finished at Thu Sep 18 13:06:44 2025

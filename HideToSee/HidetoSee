@@ -1,0 +1,32 @@
+HidetoSee 
+
+
+pretty easy challenge 
+
+the main hint is given in the image name itself saying it is atbash cipher 
+
+the first thing i did was try to extract it using binwalk but i was not able to retrive it 
+
+so i used steghide info atbash.jpg
+
+this showed me 
+
+"atbash.jpg":
+  format: jpeg
+  capacity: 2.4 KB
+Try to get information about embedded data ? (y/n) y
+Enter passphrase:
+  embedded file "encrypted.txt":
+    size: 31.0 Byte
+    encrypted: rijndael-128, cbc
+    compressed: yes
+    
+then i extracted the contents using 
+
+steghide extract -sf atbash.jpg
+
+and i got the encrypted.txt file 
+
+
+i opened it and got the contents and went to dcode website and used the atbash decipher and decrypted the flag 
+
