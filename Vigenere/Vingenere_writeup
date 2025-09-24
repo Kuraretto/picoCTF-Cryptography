@@ -1,0 +1,21 @@
+Vingenere 
+
+very easy challenge the key was also given in the problem itself 
+
+i downloaded the text file and opened it and copied the contents of the file then i went to 
+
+dcode.fr and used the cipher identifier and once i pasted in the encrypted text in the text box and gave analyze it showed that it is either 
+
+Ragbaby
+Substitution
+shift
+Enigma
+Homophonic
+Vigenere
+
+here i got the clue that it had to be Vigenere as the name of the challenege is literally the same 
+
+so i use Vingenere Cipher and give it the key and gave decrypt 
+
+and boom we got our flag
+
