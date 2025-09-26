@@ -1,0 +1,22 @@
+easy challenge 
+
+firsst download the attachment in the challenge 
+and extract the contents 
+
+you will find 2 files
+
+usernames and passwords 
+
+we are tasked with finding the password of the user "cultiris"
+
+so i search for the username and note which line the name is 
+
+then i open the passwords.txt and go to the same line and copy the encrypted password and use 
+
+dcode.fr to identify which type of cipher it is 
+
+it was a ROT-13 cipher 
+then i decrypted the password using ROT-13 decrypt in dcode.fr itself 
+
+and we get the full flag
+
