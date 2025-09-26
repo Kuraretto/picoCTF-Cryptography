@@ -1,0 +1,22 @@
+a simple challenge, we are provided with the clue in the challenege description itself 
+
+Description
+A type of transposition cipher is the rail fence cipher, which is described here. Here is one such cipher encrypted using the rail fence with 4 rails. Can you decrypt it? Download the message here. Put the decoded message in the picoCTF flag format, 
+
+so i opened up dcode.fr and entered the encrypted text from the attachement of the challenge 
+
+and analyzed the cipher and chose the 
+rail fence cipher 
+
+and pasted the excrypted text there 
+
+there i enabled the "keep punctuations and spaces" option
+
+then selected the from "from top" 
+
+and entered the number of rows and column as 4
+
+and give decrypt 
+
+this gives us the flag content, then we paste the content in the flag format 
+
