@@ -1,0 +1,26 @@
+easy challenege 
+
+i used the online website 
+
+https://morsecode.world/international/decoder/audio-decoder-adaptive.html
+
+and uploaded the given wav file 
+and ran the decoder 
+
+it printed out 
+
+WH47 H47H 90D W20U9H7
+
+and when wee take a look at the challenge decription
+
+Description
+Morse code is well known. Can you decrypt this? Download the file here. Wrap your answer with picoCTF{}, put underscores in place of pauses, and use all lowercase.
+
+it wanted us to enter the flag in lowercases with the underscore 
+so 
+this would be the flag content 
+
+wh47_h47h_90d_w20u9h7
+
+then we put this in the picoCTF flag format and enter the flag 
+
