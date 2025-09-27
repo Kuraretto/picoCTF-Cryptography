@@ -1,0 +1,7 @@
+﻿I tried solving this with dcode.fr 
+
+but it was not working and i did not have any other clues on how to solve it so i refered the writeups online 
+
+and still could not understand what it mean so I saw an video of the challenge and he used the python library pwn to solve this I saw his code and understood it and made some changes to it and solved the challenge the pwn script is in this repo for reference 
+
+
