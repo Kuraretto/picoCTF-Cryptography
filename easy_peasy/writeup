@@ -1,0 +1,47 @@
+def not easy peasy 
+
+:skull 
+
+A one-time pad is unbreakable, but can you manage to recover the flag? (Wrap with picoCTF{}) nc mercury.picoctf.net 11188 otp.py
+
+so i download the py script and see the code but could not really understand what it does 
+
+so i tried connecting with the server using the 
+
+nc mercury.picoctf.net 11188
+
+and saw that it printed the encrypted flag 
+
+i had no idea what to ddo so i searched for a writeup 
+
+and once i read the writeup i was able to understand how it works 
+
+the encrypted flag is 5541103a246e415e036c4c5f0e3d415a513e4a560050644859536b4f57003d4c
+and the lenght of the flag is 32 bytes and the length of the key is 50000 bytes from the source code 
+
+we can find this in the given code which we downloaded 
+
+the "stop >= KEY_LEN" in source code suggests that if the start position of the key exceeds 50000, it will return to the beginning, and send 32 bytes of \x00 at the second "what data would you like to encrypt?"
+
+once we get this 
+
+it looked familar like an XOR since we are given a key 
+
+so i opened cyber chef and 
+
+converted this
+5541103a246e415e036c4c5f0e3d415a513e4a560050644859536b4f57003d4c
+
+using from hex 
+
+and then 
+
+using XOR 
+
+i entered the key 62275c7838335c7866305c786462775c7862355c7865365c7861615a5c786536
+
+and got the output 
+
+7904ff830f1c5bba8f763707247ba3e1
+
+and i put this in the picoCTF flag format and boom 
